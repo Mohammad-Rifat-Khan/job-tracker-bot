@@ -27,7 +27,7 @@ jobs:
         python3 notify_telegram.py new_jobs.json
 
     - name: Upload scraped results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: new_jobs
         path: new_jobs.json
