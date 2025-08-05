@@ -1,13 +1,46 @@
 {
-  "keywords": ["devops", "cloud", "aws"],
-  "locations": ["remote", "bangladesh", "dhaka"],
-  "job_types": ["remote", "hybrid", "in-office"],
+  "keywords": [
+    "devops", "cloud", "aws", "devops internship", "cloud internship", "it support"
+  ],
+  "tech_stacks": [
+    "python", "docker", "kubernetes", "terraform", "ansible", "linux", "git", "jenkins", "azure", "gcp", "sql", "bash", "github action"
+  ],
+  "locations": [
+    "remote", "bangladesh", "dhaka"
+  ],
+  "job_types": [
+    "remote", "hybrid", "on-site"
+  ],
   "sites": [
     {
       "name": "BDJobs",
       "base_url": "https://bdjobs.com/jobsearch.asp",
       "job_selector": "div.bx",
       "next_selector": "a.next"
+    },
+    {
+      "name": "LinkedIn",
+      "base_url": "https://www.linkedin.com/jobs/search/?keywords=devops",
+      "job_selector": "li.jobs-search-results__list-item",
+      "next_selector": "button.infinite-scroller__show-more-button"
+    },
+    {
+      "name": "Facebook",
+      "base_url": "https://www.facebook.com/jobs",
+      "job_selector": "div._8tkc",
+      "next_selector": "a._1k67"
+    },
+    {
+      "name": "Remote OK",
+      "base_url": "https://remoteok.com/remote-devops-jobs",
+      "job_selector": "tr.job",
+      "next_selector": "a[rel='next']"
+    },
+    {
+      "name": "Glassdoor",
+      "base_url": "https://www.glassdoor.com/Job/jobs.htm?sc.keyword=devops",
+      "job_selector": "li.react-job-listing",
+      "next_selector": "button.next"
     }
   ],
   "max_pages": 5
