@@ -1,0 +1,14 @@
+{
+  "keywords": ["devops", "cloud", "aws"],
+  "locations": ["remote", "bangladesh", "dhaka"],
+  "job_types": ["remote", "hybrid", "in-office"],
+  "sites": [
+    {
+      "name": "BDJobs",
+      "base_url": "https://bdjobs.com/jobsearch.asp",
+      "job_selector": "div.bx",
+      "next_selector": "a.next"
+    }
+  ],
+  "max_pages": 5
+}

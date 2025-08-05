@@ -1,0 +1,33 @@
+name: Run Job Scraper
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Run every hour at minute 0
+  workflow_dispatch:     # Allow manual trigger
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-requests python3-bs4 python3-lxml
+
+    - name: Run scraper and notify via Telegram
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        python3 scraper.py > new_jobs.json
+        python3 notify_telegram.py new_jobs.json
+
+    - name: Upload scraped results
+      uses: actions/upload-artifact@v3
+      with:
+        name: new_jobs
+        path: new_jobs.json
